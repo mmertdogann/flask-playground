@@ -2,9 +2,16 @@
 
 {% block body %}
 
-<form action="/" method="post">
-    <input autocomplete="off" autofocus placeholder="Name" name="name" type="text">
-    <input type="submit">
-</form>
+    <h1>Register</h1>
+    <form action="/register" method="post">
+        <input autocomplete="off" autofocus placeholder="Name" name="name" type="text">
+        <select name="sport">
+            <option disabled selected value="">Sport</option>
+            {% for sport in sports %}
+                <option value="{{ sport }}">{{ sport }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Register">
+    </form>
 
 {% endblock %}
